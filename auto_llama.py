@@ -134,7 +134,6 @@ class WebpageQATool(BaseTool):
         docs = [Document(page_content=result, metadata={"source": url})]
         web_docs = self.text_splitter.split_documents(docs)
         results = []
-        # TODO: Handle this with a MapReduceChain
         for i in range(0, len(web_docs), 4):
             input_docs = web_docs[i : i + 4]
             window_result = self.qa_chain(
