@@ -169,7 +169,7 @@ tools = [
     ReadFileTool(root_dir="./data"),
     process_csv,
     query_website_tool,
-    # HumanInputRun(), # Activate if you want the permit asking for help from the human
+    # HumanInputRun(), 
 ]
 
 agent = AutoGPT.from_llm_and_tools(
