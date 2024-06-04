@@ -185,6 +185,6 @@ agent = AutoGPT.from_llm_and_tools(
 # Run the agent with a prompt
 agent.run(
     [
-        "What were the winning boston marathon times for the past 5 years (ending in 2022)? Generate a table of the year, name, country of origin, and times."
+        "Compile table of electricity consumption per capita for g20 nations."
     ]
 )
