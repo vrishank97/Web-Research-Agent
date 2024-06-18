@@ -385,7 +385,7 @@ def get_graph_response(question, chat_context):
     return best_trajectory[-1].content
 
 # Set page configuration
-st.set_page_config(layout="wide", page_title="Atto.work", page_icon="🤖")
+st.set_page_config(layout="wide", page_title="Atto.work", page_icon="⚛︎")
 st.sidebar.image("https://github.com/safi842/Web-Research-Agent/blob/main/Atto_logo.png?raw=true", width = 300)
 st.sidebar.title("Atto - DataWeave")
 st.sidebar.write("Streamline your insights: Our AI aggregator tool compiles high-quality data from the web, empowering bankers and consultants with comprehensive, accurate information.")
