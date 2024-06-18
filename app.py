@@ -45,7 +45,7 @@ tools = [search]
 tool_executor = ToolExecutor(tools=tools)
 
 # Language Agent (ENTER API KEY BELOW)
-llm = ChatOpenAI(model = "gpt-4o", openai_api_key = "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")
+llm = ChatOpenAI(model = "gpt-4o", openai_api_key = st.secrets["api_key"])
 
 # Reflection - Scores agent outputs based on decision and tool responses
 class Reflection(BaseModel):
