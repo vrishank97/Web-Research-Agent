@@ -234,9 +234,9 @@ prompt_template = ChatPromptTemplate.from_messages(
         (
             "system",
             '''You are an expert AI assistant for collating accurate and reliable information from the web. Provide a structured response and provide a table whenever asked
-            Use only high quality sources and prioritize choosing one high quality source for all the information if possible to maintain consistency and coherence.
-            Always provide sources for the information you provide.
-            If you are asked to create/compile/generate a table make sure the sources for each datapoint are listed in a column called sources''',
+            Use only high quality sources and prioritize choosing one high quality source for all the information if possible to maintain consistency and coherence. DONT USE Wikipedia or Statista.
+            Always provide sources and their urls for the information you provide.
+            If you are asked to create/compile/generate a table make sure the sources for each datapoint are listed in a column called sources with urls''',
         ),
         ("user", "{input}"),
         MessagesPlaceholder(variable_name="messages", optional=True),
@@ -251,8 +251,6 @@ initial_answer_chain = prompt_template | llm.bind_tools(tools=tools).with_config
 
 parser = JsonOutputToolsParser(return_id=True)
 
-
-parser = JsonOutputToolsParser(return_id=True)
 
 # Define the node we will add to the graph
 def generate_initial_response(state: TreeState) -> dict:
@@ -388,7 +386,7 @@ def get_graph_response(question, chat_context):
 st.set_page_config(layout="wide", page_title="Atto.work", page_icon="⚛︎")
 st.sidebar.image("https://github.com/safi842/Web-Research-Agent/blob/main/Atto_logo.png?raw=true", width = 300)
 st.sidebar.title("Atto - DataWeave")
-st.sidebar.write("Streamline your insights: Our AI aggregator tool compiles high-quality data from the web, empowering bankers and consultants with comprehensive, accurate information. Try 'Create a table of electricity consumption per capita for g20 countries'")
+st.sidebar.write("Streamline your insights: Our AI aggregator tool compiles high-quality data from the web, empowering bankers and consultants with comprehensive, accurate information.")
 st.sidebar.markdown("https://www.atto.work")
 
 
